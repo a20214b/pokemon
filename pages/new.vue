@@ -57,6 +57,7 @@ export default {
       <GamifyButton type="button" @click="onOpen(true)" :disabled="!valid"
         >けってい</GamifyButton
       >
+      <BackButton @click="this.$router.go(-1)">まえにもどる</BackButton>
     </form>
     <GamifyDialog
       v-if="dialog"

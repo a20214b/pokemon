@@ -100,10 +100,12 @@ export default {
     <GamifyButton @click="onOpenDelete(true)"
       >マサラタウンにかえる</GamifyButton
     >
+    <BackButton @click="this.$router.go(-1)">まえにもどる</BackButton>
     <h2>てもちポケモン</h2>
     <CatchButton :to="`/trainer/${trainer.name}/catch`"
       >ポケモンをつかまえる</CatchButton
     >
+
     <GamifyList>
       <GamifyItem v-for="pokemon in trainer.pokemons" :key="pokemon.id">
         <img :src="pokemon.sprites.front_default" />

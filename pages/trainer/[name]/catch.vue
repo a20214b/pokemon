@@ -68,6 +68,9 @@ export default {
       <GamifyItem>
         <GamifyButton @click="onNext" :disabled="!hasNext">つぎへ</GamifyButton>
       </GamifyItem>
+      <GamifyItem>
+        <BackButton @click="this.$router.go(-1)">まえにもどる</BackButton>
+      </GamifyItem>
     </GamifyList>
     <GamifyList>
       <GamifyItem v-for="pokemon in pokemons.results" :key="pokemon.url">
