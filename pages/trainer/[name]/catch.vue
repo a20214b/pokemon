@@ -71,6 +71,7 @@ export default {
     </GamifyList>
     <GamifyList>
       <GamifyItem v-for="pokemon in pokemons.results" :key="pokemon.url">
+        <img :src="pokemon.sprites.front_default" />
         <span class="pokemon-name">{{ pokemon.name }}</span>
         <GamifyButton @click="onOpen(pokemon)">つかまえる</GamifyButton>
       </GamifyItem>
@@ -91,13 +92,13 @@ export default {
         </GamifyItem>
       </GamifyList>
     </GamifyDialog>
-    <GamifyList direction="horizon">
+    <!-- <GamifyList direction="horizon">
       <GamifyItem>
         <GamifyButton @click="onPrev" :disabled="!hasPrev">まえへ</GamifyButton>
       </GamifyItem>
       <GamifyItem>
         <GamifyButton @click="onNext" :disabled="!hasNext">つぎへ</GamifyButton>
       </GamifyItem>
-    </GamifyList>
+    </GamifyList> -->
   </div>
 </template>
