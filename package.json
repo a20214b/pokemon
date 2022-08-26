@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.145.0",
+    "@aws-sdk/node-http-handler": "^3.127.0",
     "@marp-team/marp-cli": "^2.1.2",
     "animate.css": "^4.1.1",
     "eslint": "^8.21.0",
@@ -10,7 +11,8 @@
     "http-proxy-middleware": "^2.0.6",
     "npm-check-updates": "^16.0.5",
     "nuxt3": "3.0.0-27414150.3589a2d",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "proxy-agent": "^5.0.0"
   },
   "packageManager": "npm@8.11.0",
   "private": true,

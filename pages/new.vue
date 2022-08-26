@@ -39,7 +39,7 @@ export default {
 
 <template>
   <div>
-    <h1>あたらしくはじめる</h1>
+    <h1>あたらしくはじめる　新規作成</h1>
     <p>では　はじめに　きみの　なまえを　おしえて　もらおう！</p>
     <form @submit.prevent>
       <div class="item">
