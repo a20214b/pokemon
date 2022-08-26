@@ -20,6 +20,7 @@ app.use(
     pathRewrite: {
       "^/api/pokeapi": "/api/v2",
     },
+    secure: false,
   })
 );
 

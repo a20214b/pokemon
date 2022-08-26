@@ -61,6 +61,14 @@ export default {
     <h1>ポケモンをつかまえる</h1>
     <p>{{ pokemons.count }} しゅるいのポケモン</p>
     <p>{{ page + 1 }} / {{ maxPage + 1 }} ページ</p>
+    <GamifyList direction="horizon">
+      <GamifyItem>
+        <GamifyButton @click="onPrev" :disabled="!hasPrev">まえへ</GamifyButton>
+      </GamifyItem>
+      <GamifyItem>
+        <GamifyButton @click="onNext" :disabled="!hasNext">つぎへ</GamifyButton>
+      </GamifyItem>
+    </GamifyList>
     <GamifyList>
       <GamifyItem v-for="pokemon in pokemons.results" :key="pokemon.url">
         <span class="pokemon-name">{{ pokemon.name }}</span>
