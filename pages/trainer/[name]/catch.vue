@@ -28,6 +28,10 @@ export default {
       page.value++;
       await refresh();
     };
+    const onMaxPage = async () => {
+      maxPage.value;
+      await refresh();
+    };
     const onCatch = async (pokemon) => {
       const response = await fetch(
         `${VITE_SERVER_ORIGIN}/api/trainer/${route.params.name}/pokemon/${pokemon.name}`,
@@ -47,6 +51,7 @@ export default {
       hasNext,
       onPrev,
       onNext,
+      onMaxPage,
       onCatch,
       dialog,
       onOpen,
@@ -58,9 +63,10 @@ export default {
 
 <template>
   <div>
+    <BackButton @click="this.$router.go(-1)">まえにもどる</BackButton>
     <h1>ポケモンをつかまえる</h1>
     <p>{{ pokemons.count }} しゅるいのポケモン</p>
-    <p>{{ page + 1 }} / {{ maxPage + 1 }} ページ</p>
+
     <GamifyList direction="horizon">
       <GamifyItem>
         <GamifyButton @click="onPrev" :disabled="!hasPrev">まえへ</GamifyButton>
@@ -69,8 +75,9 @@ export default {
         <GamifyButton @click="onNext" :disabled="!hasNext">つぎへ</GamifyButton>
       </GamifyItem>
       <GamifyItem>
-        <BackButton @click="this.$router.go(-1)">まえにもどる</BackButton>
+        <GamifyButton @click="onMaxPage">さいごへ</GamifyButton>
       </GamifyItem>
+      <p>{{ page + 1 }} / {{ maxPage + 1 }} ページ</p>
     </GamifyList>
     <GamifyList>
       <GamifyItem v-for="pokemon in pokemons.results" :key="pokemon.url">
@@ -95,13 +102,5 @@ export default {
         </GamifyItem>
       </GamifyList>
     </GamifyDialog>
-    <!-- <GamifyList direction="horizon">
-      <GamifyItem>
-        <GamifyButton @click="onPrev" :disabled="!hasPrev">まえへ</GamifyButton>
-      </GamifyItem>
-      <GamifyItem>
-        <GamifyButton @click="onNext" :disabled="!hasNext">つぎへ</GamifyButton>
-      </GamifyItem>
-    </GamifyList> -->
   </div>
 </template>

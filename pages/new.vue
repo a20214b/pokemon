@@ -39,7 +39,8 @@ export default {
 
 <template>
   <div>
-    <h1>あたらしくはじめる　新規</h1>
+    <BackButton @click="this.$router.go(-1)">まえにもどる</BackButton>
+    <h1>あたらしくはじめる</h1>
     <p>では　はじめに　きみの　なまえを　おしえて　もらおう！</p>
     <form @submit.prevent>
       <div class="item">
@@ -57,7 +58,6 @@ export default {
       <GamifyButton type="button" @click="onOpen(true)" :disabled="!valid"
         >けってい</GamifyButton
       >
-      <BackButton @click="this.$router.go(-1)">まえにもどる</BackButton>
     </form>
     <GamifyDialog
       v-if="dialog"

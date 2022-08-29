@@ -92,6 +92,7 @@ export default {
 
 <template>
   <div>
+    <BackButton @click="this.$router.go(-1)">まえにもどる</BackButton>
     <h1>トレーナー情報</h1>
     <div class="trainer-info">
       <img src="/avatar.png" />
@@ -100,7 +101,7 @@ export default {
     <GamifyButton @click="onOpenDelete(true)"
       >マサラタウンにかえる</GamifyButton
     >
-    <BackButton @click="this.$router.go(-1)">まえにもどる</BackButton>
+
     <h2>てもちポケモン</h2>
     <CatchButton :to="`/trainer/${trainer.name}/catch`"
       >ポケモンをつかまえる</CatchButton

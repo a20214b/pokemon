@@ -17,7 +17,7 @@ export default {
 <style scoped>
 .back-button {
   border-radius: 0.5rem;
-  border: solid 4px #555;
+  border: solid 4px rgb(24, 165, 35);
   padding: 0.4em 1em;
   cursor: pointer;
   display: inline-block;

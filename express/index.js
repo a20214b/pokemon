@@ -16,11 +16,12 @@ app.use(
   "/pokeapi",
   createProxyMiddleware({
     target: "https://pokeapi.co",
+    // port:443,
     changeOrigin: true,
     pathRewrite: {
       "^/api/pokeapi": "/api/v2",
     },
-    secure: false,
+    //  secure: false,
   })
 );
 
@@ -45,13 +46,17 @@ app.post("/trainer", async (req, res, next) => {
     if (!("name" in req.body && req.body.name.length > 0))
       return res.sendStatus(400);
     const trainers = await findTrainers();
-    if (trainers.some(({ Key }) => Key === `${req.body.name}.json`))
+    if (trainers.some(({ Key }) => Key === `${req.body.name}.json`)) {
+      console.log("トレーナー名重複");
       return res.sendStatus(409);
+    }
     const result = await upsertTrainer(req.body.name, req.body);
     res.status(result["$metadata"].httpStatusCode).send(result);
   } catch (err) {
+    console.log(err);
     next(err);
   }
+  
 });
 
 /** トレーナーの取得 */
