@@ -16,12 +16,11 @@ app.use(
   "/pokeapi",
   createProxyMiddleware({
     target: "https://pokeapi.co",
-    // port:443,
     changeOrigin: true,
     pathRewrite: {
       "^/api/pokeapi": "/api/v2",
     },
-    //  secure: false,
+    secure: false,
   })
 );
 
@@ -56,7 +55,6 @@ app.post("/trainer", async (req, res, next) => {
     console.log(err);
     next(err);
   }
-  
 });
 
 /** トレーナーの取得 */
@@ -134,6 +132,7 @@ app.delete(
         (pokemon) => String(pokemon.id) === pokemonId
       );
       trainer.pokemons.splice(index, 1);
+      //S3オブジェクトを更新
       const result = await upsertTrainer(trainerName, trainer);
       res.status(result["$metadata"].httpStatusCode).send(result);
     } catch (err) {

@@ -72,12 +72,12 @@ export default {
         <GamifyButton @click="onPrev" :disabled="!hasPrev">まえへ</GamifyButton>
       </GamifyItem>
       <GamifyItem>
-        <GamifyButton @click="onNext" :disabled="!hasNext">つぎへ</GamifyButton>
+        <GamifyButton :disabled="!hasNext" @click="onNext">つぎへ</GamifyButton>
       </GamifyItem>
-      <GamifyItem>
-        <GamifyButton @click="onMaxPage">さいごへ</GamifyButton>
-      </GamifyItem>
-      <p>{{ page + 1 }} / {{ maxPage + 1 }} ページ</p>
+      <p text-align: center v-if="page === maxPage">
+        {{ page + 1 }} / {{ maxPage + 1 }} もうぽけもんはいないよ！
+      </p>
+      <p text-align: center v-else>{{ page + 1 }} / {{ maxPage + 1 }} ページ</p>
     </GamifyList>
     <GamifyList>
       <GamifyItem v-for="pokemon in pokemons.results" :key="pokemon.url">
