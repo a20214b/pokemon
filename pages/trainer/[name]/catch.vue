@@ -74,7 +74,7 @@ export default {
       <GamifyItem>
         <GamifyButton :disabled="!hasNext" @click="onNext">つぎへ</GamifyButton>
       </GamifyItem>
-      <p text-align: center v-if="page === maxPage">
+      <p text-align: center v-if="(page + 1)=== (maxPage +1)">
         {{ page + 1 }} / {{ maxPage + 1 }} もうぽけもんはいないよ！
       </p>
       <p text-align: center v-else>{{ page + 1 }} / {{ maxPage + 1 }} ページ</p>
