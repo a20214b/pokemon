@@ -123,13 +123,13 @@ app.put(
 
 /** ポケモンの削除 */
 app.delete(
-  "/trainer/:trainerName/pokemon/:pokemonName",
+  "/trainer/:trainerName/pokemon/:pokemonId",
   async (req, res, next) => {
     try {
-      const { trainerName, pokemonName } = req.params;
+      const { trainerName, pokemonId } = req.params;
       const trainer = await findTrainer(trainerName);
       const index = trainer.pokemons.findIndex(
-        (pokemon) => String(pokemon.id) === pokemonName
+        (pokemon) => String(pokemon.id) === pokemonId
       );
       trainer.pokemons.splice(index, 1);
       //S3オブジェクトを更新
