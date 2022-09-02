@@ -80,9 +80,11 @@ export default {
       <p v-else text-align: center>{{ page + 1 }} / {{ maxPage + 1 }} ページ</p>
     </GamifyList>
     <GamifyList>
-    <GamifyItem v-for="pokemon in pokemons.results" :key="pokemon.url">
+      <GamifyItem v-for="pokemon in pokemons.results" :key="pokemon.url">
         <!-- <img :src="pokemon.sprites.front_default" /> -->
-        <!-- <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png"/> -->
+        <img
+          src="https:/pokemonId/raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png"
+        />
         <span class="pokemon-name">{{ pokemon.name }}</span>
         <!-- <img :src="pokemon.sprites.front_default" /> -->
         <!-- <img
@@ -99,7 +101,6 @@ export default {
       :description="`ほう！　${dialog.name}　にするんじゃな？`"
       @close="onClose"
     >
-
       <!-- <img :src="pokemon.sprites.front_default" /> -->
 
       <GamifyList :border="false" direction="horizon">
