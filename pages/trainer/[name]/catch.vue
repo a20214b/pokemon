@@ -82,9 +82,10 @@ export default {
     <GamifyList>
       <GamifyItem v-for="pokemon in pokemons.results" :key="pokemon.url">
         <!-- <img :src="pokemon.sprites.front_default" /> -->
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"/>
-        <img :src="pokemon.url" />
-        console.log("pokemon.url");
+        <img
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+        />
+        <img :src="pokemon.url.front_default" />
         <span class="pokemon-name">{{ pokemon.name }}</span>
         <!-- <img :src="pokemon.sprites.front_default" /> -->
         <!-- <img
