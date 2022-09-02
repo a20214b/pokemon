@@ -80,7 +80,7 @@ export default {
       <p v-else text-align: center>{{ page + 1 }} / {{ maxPage + 1 }} ページ</p>
     </GamifyList>
     <GamifyList>
-      <GamifyItem v-for="pokemon in pokemons.results" :key="pokemon.url">
+      <GamifyItem v-for="pokemon in pokemons.results" :key="pokemon.id">
         <img :src="pokemon.sprites.front_default" />
         <span class="pokemon-name">{{ pokemon.name }}</span>
         <GamifyButton @click="onOpen(pokemon)">つかまえる</GamifyButton>
