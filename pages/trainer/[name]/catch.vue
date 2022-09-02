@@ -94,6 +94,7 @@ export default {
       :description="`ほう！　${dialog.name}　にするんじゃな？`"
       @close="onClose"
     >
+    <img :src="pokemon.sprites.front_default" />
       <GamifyList :border="false" direction="horizon">
         <GamifyItem>
           <GamifyButton @click="onClose">いいえ</GamifyButton>
