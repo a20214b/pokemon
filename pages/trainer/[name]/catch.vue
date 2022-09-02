@@ -81,7 +81,8 @@ export default {
     </GamifyList>
     <GamifyList>
       <GamifyItem v-for="pokemon in pokemons.results" :key="pokemon.id">
-        <img :src="pokemon.sprites.front_default" />
+        <!-- <img :src="pokemon.sprites.front_default" /> -->
+        <!-- <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png"/> -->
         <span class="pokemon-name">{{ pokemon.name }}</span>
         <GamifyButton @click="onOpen(pokemon)">つかまえる</GamifyButton>
       </GamifyItem>
