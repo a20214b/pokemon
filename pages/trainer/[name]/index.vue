@@ -43,9 +43,9 @@ export default {
       await refresh();
       onCloseNickname();
     };
-    const onRelease = async (pokemonId) => {
+    const onRelease = async (pokemonName) => {
       const response = await fetch(
-        `${VITE_SERVER_ORIGIN}/api/trainer/${route.params.name}/pokemon/${pokemonId}`,
+        `${VITE_SERVER_ORIGIN}/api/trainer/${route.params.name}/pokemon/${pokemonName}`,
         {
           method: "DELETE",
         }
