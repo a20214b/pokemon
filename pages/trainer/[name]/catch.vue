@@ -69,19 +69,20 @@ export default {
 
     <GamifyList direction="horizon">
       <GamifyItem>
-        <GamifyButton @click="onPrev" :disabled="!hasPrev">まえへ</GamifyButton>
+        <GamifyButton :disabled="!hasPrev" @click="onPrev">まえへ</GamifyButton>
       </GamifyItem>
       <GamifyItem>
         <GamifyButton :disabled="!hasNext" @click="onNext">つぎへ</GamifyButton>
       </GamifyItem>
-      <p text-align: center v-if="(page + 1)=== (maxPage +1)">
+      <p v-if="page + 1 === maxPage + 1" text-align:center>
         {{ page + 1 }} / {{ maxPage + 1 }} もうぽけもんはいないよ！
       </p>
-      <p text-align: center v-else>{{ page + 1 }} / {{ maxPage + 1 }} ページ</p>
+      <p v-else text-align: center>{{ page + 1 }} / {{ maxPage + 1 }} ページ</p>
     </GamifyList>
     <GamifyList>
       <GamifyItem v-for="pokemon in pokemons.results" :key="pokemon.url">
-        <!-- <img :src="pokemon.sprites.front_default" /> -->
+        <!-- <img :src="pokemon.sprites.back_default" /> -->
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png"/>
         <span class="pokemon-name">{{ pokemon.name }}</span>
         <GamifyButton @click="onOpen(pokemon)">つかまえる</GamifyButton>
       </GamifyItem>
