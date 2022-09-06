@@ -86,12 +86,9 @@ export default {
           src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
         /> -->
         <img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${page}.png"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${{pokemon.id}}.png"
         />
-        <!-- <img :src="pokemon.sprites.front_default" /> -->
         <span class="pokemon-name">{{ pokemon.name }}</span>
-        <!-- <img :src="pokemon.sprites.front_default" /> -->
-
         <GamifyButton @click="onOpen(pokemon)">つかまえる</GamifyButton>
       </GamifyItem>
     </GamifyList>
