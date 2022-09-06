@@ -8,4 +8,5 @@ export default defineNuxtConfig({
    */
   serverMiddleware: [{ path: "/api", handler: "~/express/index.js" }],
   css: ["animate.css"],
-});
+},
+);
