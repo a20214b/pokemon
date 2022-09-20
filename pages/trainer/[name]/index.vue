@@ -110,6 +110,7 @@ export default {
     <GamifyList>
       <GamifyItem v-for="pokemon in trainer.pokemons" :key="pokemon.id">
         <img :src="pokemon.sprites.front_default" />
+        <!-- {{ pokemon.id }} -->
         <span class="pokemon-name">{{ pokemon.nickname || pokemon.name }}</span>
         <GamifyButton @click="onOpenNickname(pokemon)"
           >ニックネームをつける</GamifyButton

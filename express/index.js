@@ -17,10 +17,10 @@ app.use(
   createProxyMiddleware({
     target: "https://pokeapi.co",
     changeOrigin: true,
+    secure: false,
     pathRewrite: {
       "^/api/pokeapi": "/api/v2",
     },
-    secure: false,
   })
 );
 
