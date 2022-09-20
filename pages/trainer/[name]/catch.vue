@@ -83,7 +83,7 @@ export default {
       <GamifyItem v-for="pokemon in pokemons.results" :key="pokemon.url">
         <!-- <img :src="pokemon.sprites.front_default" /> これでアイコンが出るはず出ないのはなぜ？ -->
         {{ pokemon.id }}
-        {{ pokemon.url }}
+        {{ pokemon.url.back_default }}
         <img
           src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
         />
