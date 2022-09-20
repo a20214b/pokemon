@@ -80,18 +80,11 @@ export default {
       <p v-else text-align: center>{{ page + 1 }} / {{ maxPage + 1 }} ページ</p>
     </GamifyList>
     <GamifyList>
-      <GamifyItem v-for="pokemon in pokemons.results" :key="pokemon.url">
+      <GamifyItem v-for="pokemon in pokemons.results" :key="pokemon.id">
         <!-- <img :src="pokemon.sprites.front_default" /> これでアイコンが出るはず出ないのはなぜ？ -->
         <!-- pokemon.url.substring(36); -->
         <!-- {{ pokemonno }} -->
-        {{ Number("pokemon.url.substring(34)") }}
-        {{ Number("pokemon.url.substring(36)") }}
-        <img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{Number('pokemon.url.substring(35)')}}.png"
-        />
-        <img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{Number('pokemon.url.substring(34)')}}.png"
-        />
+        <img :src="pokemon.sprites.front_default" />
         <span class="pokemon-name">{{ pokemon.name }}</span>
         <GamifyButton @click="onOpen(pokemon)">つかまえる</GamifyButton>
       </GamifyItem>
