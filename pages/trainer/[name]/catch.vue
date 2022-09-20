@@ -82,11 +82,11 @@ export default {
     <GamifyList>
       <GamifyItem v-for="pokemon in pokemons.results" :key="pokemon.url">
         <!-- <img :src="pokemon.sprites.front_default" /> これでアイコンが出るはず出ないのはなぜ？ -->
-        var url = "pokemon.url"; var no = str.url(36);
-        {{ no }}
+        var url = 'pokemon.url'; var pokemonno = url.substring(36);
+        {{ pokemonno }}
 
         <img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{no}}.png"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemonno}}.png"
         />
         <span class="pokemon-name">{{ pokemon.name }}</span>
         <GamifyButton @click="onOpen(pokemon)">つかまえる</GamifyButton>
