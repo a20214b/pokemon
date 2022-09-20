@@ -94,7 +94,6 @@ export default {
       id="confirm-catch"
       title="かくにん"
       :description="`ほう！　${dialog.name}　にするんじゃな？`"
-       />
       @close="onClose"
     >
       <!-- <img :src="pokemon.sprites.front_default" /> -->
