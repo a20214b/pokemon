@@ -84,7 +84,7 @@ export default {
         <!-- <img :src="pokemon.sprites.front_default" /> これでアイコンが出るはず出ないのはなぜ？ -->
         <!-- pokemon.url.substring(36); -->
         <!-- {{ pokemonno }} -->
-
+        {{ Number("pokemon.url.substring(35)") }}
         <img
           src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{Number('pokemon.url.substring(35)')}}.png"
         />
