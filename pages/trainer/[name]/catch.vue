@@ -89,10 +89,14 @@ export default {
         <GamifyButton @click="onOpen(pokemon)">つかまえる</GamifyButton>
       </GamifyItem>
     </GamifyList>
-    <GamifyDialog>
-      v-if="dialog" id="confirm-catch" title="かくにん"
-      :description="`ほう！　${dialog.name}　にするんじゃな？`" />
-      @close="onClose" >
+    <GamifyDialog
+      v-if="dialog"
+      id="confirm-catch"
+      title="かくにん"
+      :description="`ほう！　${dialog.name}　にするんじゃな？`"
+       />
+      @close="onClose"
+    >
       <!-- <img :src="pokemon.sprites.front_default" /> -->
 
       <GamifyList :border="false" direction="horizon">
