@@ -93,7 +93,10 @@ export default {
       v-if="dialog"
       id="confirm-catch"
       title="かくにん"
-      :description="`ほう！　${dialog.name}　にするんじゃな？`"
+      :description="`ほう！　${dialog.name}　にするんじゃな？`">
+    https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/{{dialog.id}}.png
+      </GamifyDialog>
+       
       @close="onClose"
     >
       <!-- <img :src="pokemon.sprites.front_default" /> -->
