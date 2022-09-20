@@ -82,7 +82,7 @@ export default {
     <GamifyList>
       <GamifyItem v-for="pokemon in pokemons.results" :key="pokemon.url">
         <!-- <img :src="pokemon.sprites.front_default" /> これでアイコンが出るはず出ないのはなぜ？ -->
-        var url = "pokemon.url"; var no = srt.url(36);
+        var url = "pokemon.url"; var no = str.url(36);
         {{ no }}
 
         <img
