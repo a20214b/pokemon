@@ -85,7 +85,7 @@ export default {
         {{ pokemon.sprites.front_default }}
 
         {{ pokemon.url }}
-        {{ <pokemon class="sprites data"> front_default</pokemon> }}
+        {{ pokemon.sprites.data.front_default }}
 
         <img
           src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
