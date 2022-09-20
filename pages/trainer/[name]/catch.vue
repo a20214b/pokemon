@@ -75,18 +75,18 @@ export default {
         <GamifyButton :disabled="!hasNext" @click="onNext">つぎへ</GamifyButton>
       </GamifyItem>
       <p v-if="page + 1 === maxPage + 1" text-align:center>
-        {{ page + 1 }} / {{ maxPage + 1 }} もうぽけもんはいないよ！
+        {{ page + 1 }} / {{ maxPage + 1 }} もうぽけもんはいないよ！最大！！
       </p>
       <p v-else text-align: center>{{ page + 1 }} / {{ maxPage + 1 }} ページ</p>
     </GamifyList>
     <GamifyList>
       <GamifyItem v-for="pokemon in pokemons.results" :key="pokemon.url">
         <!-- <img :src="pokemon.sprites.front_default" /> これでアイコンが出るはず出ないのはなぜ？ -->
-        var url = 'pokemon.url'; var pokemonno = url.substring(36);
-        {{ pokemonno }}
+        <!-- pokemon.url.substring(36); -->
+        <!-- {{ pokemonno }} -->
 
         <img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemonno}}.png"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.url.substring(36)}}.png"
         />
         <span class="pokemon-name">{{ pokemon.name }}</span>
         <GamifyButton @click="onOpen(pokemon)">つかまえる</GamifyButton>
