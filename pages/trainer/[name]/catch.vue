@@ -86,10 +86,10 @@ export default {
         <!-- {{ pokemonno }} -->
 
         <img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{Number(pokemon.url.substring(35))}}.png"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{Number('pokemon.url.substring(35)')}}.png"
         />
         <img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{Number(pokemon.url.substring(34))}}.png"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{Number('pokemon.url.substring(34)')}}.png"
         />
         <span class="pokemon-name">{{ pokemon.name }}</span>
         <GamifyButton @click="onOpen(pokemon)">つかまえる</GamifyButton>
